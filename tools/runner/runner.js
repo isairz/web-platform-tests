@@ -275,7 +275,7 @@ VisualOutput.prototype = {
 
     link: function(href) {
         var link = document.createElement("a");
-        link.href = this.runner.server + href;
+        link.href = this.runner.server + href + '?usePrefixes=1';
         link.textContent = href;
         return link;
     },
@@ -651,7 +651,7 @@ Runner.prototype = {
         if (this.test_window.location === null) {
             this.open_test_window();
         }
-        this.test_window.location.href = this.server + path;
+        this.test_window.location.href = this.server + path + '?usePrefixes=1';
     },
 
     progress: function() {
